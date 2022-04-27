@@ -47,10 +47,15 @@ class Currency:
         return res
 
     def __sub__(self, other):
-        pass
+        if type(other) == int or type(other) == float:
+            x = (other * Currency.currencies[self.unit])
+        else:
+            x = (
+                other.value / Currency.currencies[other.unit] * Currency.currencies[self.unit])
+        return Currency(self.value - x, self.unit)
 
     def __isub__(self, other):
-        pass
+        return Currency.__sub__(self, other)
 
     def __rsub__(self, other):
         pass
@@ -62,5 +67,5 @@ print(v1 + v2)
 print(v2 + v1)
 print(v1 + 3)  # an int or a float is considered to be a USD value
 print(3 + v1)
-# print(v1 - 3)  # an int or a float is considered to be a USD value
+print(v1 - 3)  # an int or a float is considered to be a USD value
 # print(30 - v2)

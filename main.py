@@ -38,23 +38,18 @@ class Currency:
         return Currency(x + self.value, self.unit)
     
     def __iadd__(self,other):
-        # Defines the '+' operator. If other is a Currency object, the currency values are added and the result will be the unit of self. If other is an int or a float, other will be treated as a USD value.
-        pass
+        return Currency.__add__(self,other)
 
     def __radd__(self,other):
-        # Defines the '+' operator. If other is a Currency object, the currency values are added and the result will be the unit of self. If other is an int or a float, other will be treated as a USD value.
         pass
 
     def __sub__(self,other):
-        # Defines the '+' operator. If other is a Currency object, the currency values are added and the result will be the unit of self. If other is an int or a float, other will be treated as a USD value.
         pass
 
     def __isub__(self,other):
-        # Defines the '+' operator. If other is a Currency object, the currency values are added and the result will be the unit of self. If other is an int or a float, other will be treated as a USD value.
         pass
 
     def __rsub__(self,other):
-        # Defines the '+' operator. If other is a Currency object, the currency values are added and the result will be the unit of self. If other is an int or a float, other will be treated as a USD value.
         pass
 
 

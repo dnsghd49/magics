@@ -58,7 +58,11 @@ class Currency:
         return Currency.__sub__(self, other)
 
     def __rsub__(self, other):
-        pass
+        res = other - self.value
+        res = Currency(res, self.unit)
+        if self.unit != "USD":
+            res.changeTo("USD")
+        return res
 
 
 v1 = Currency(23.43, "EUR")
@@ -68,4 +72,4 @@ print(v2 + v1)
 print(v1 + 3)  # an int or a float is considered to be a USD value
 print(3 + v1)
 print(v1 - 3)  # an int or a float is considered to be a USD value
-# print(30 - v2)
+print(30 - v2)
